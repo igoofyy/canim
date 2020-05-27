@@ -18,12 +18,12 @@ final class KeyboardViewController: UIInputViewController {
         override func viewDidLoad() {
                 super.viewDidLoad()
                 
-                self.collectionView.dataSource = self
-                self.collectionView.delegate = self
-                self.collectionView.register(WordsCollectionViewCell.self, forCellWithReuseIdentifier: "WordsCell")
-                self.collectionView.backgroundColor = self.view.backgroundColor
+                collectionView.dataSource = self
+                collectionView.delegate = self
+                collectionView.register(WordsCollectionViewCell.self, forCellWithReuseIdentifier: "WordsCell")
+                collectionView.backgroundColor = self.view.backgroundColor
                 
-                self.view.addSubview(keyboardStackView)
+                view.addSubview(keyboardStackView)
                 keyboardStackView.translatesAutoresizingMaskIntoConstraints = false
                 keyboardStackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
                 keyboardStackView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -95,14 +95,14 @@ final class KeyboardViewController: UIInputViewController {
                 toolBar.keyboardDownButton.addTarget(self, action: #selector(handleDismissKeyboard), for: .allTouchEvents)
         }
         @objc private func handleDownArrowEvent() {
-                self.wordsBoard.height = self.view.bounds.height
-                self.keyboardLayout = .wordsBoard
+                wordsBoard.height = view.bounds.height
+                keyboardLayout = .wordsBoard
         }
         @objc private func handleDismissKeyboard() {
-                self.dismissKeyboard()
+                dismissKeyboard()
         }
         @objc private func handleSettingsButtonEvent() {
-                self.settingsView.height = self.view.bounds.height
-                self.keyboardLayout = .settingsView
+                settingsView.height = view.bounds.height
+                keyboardLayout = .settingsView
         }
 }

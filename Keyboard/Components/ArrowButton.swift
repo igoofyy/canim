@@ -12,6 +12,6 @@ final class ArrowButton: UIButton {
                 arrowImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -rightInset).isActive = true
                 arrowImageView.contentMode = .scaleAspectFit
                 arrowImageView.image = UIImage(systemName: imageName)
-                self.backgroundColor = .clearTappable
+                backgroundColor = .clearTappable
         }
 }

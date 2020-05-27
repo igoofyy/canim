@@ -4,7 +4,7 @@ final class WordsBoard: UIView {
         
         var height: CGFloat = 270 {
                 didSet {
-                        self.heightAnchor.constraint(equalToConstant: height).isActive = true
+                        heightAnchor.constraint(equalToConstant: height).isActive = true
                 }
         }
         
@@ -33,7 +33,7 @@ final class SettingsView: UIView {
         
         var height: CGFloat = 270 {
                 didSet {
-                        self.heightAnchor.constraint(equalToConstant: height).isActive = true
+                        heightAnchor.constraint(equalToConstant: height).isActive = true
                 }
         }
         

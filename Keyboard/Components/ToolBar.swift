@@ -7,7 +7,7 @@ final class ToolBar: UIView {
         init(viewController: KeyboardViewController) {
                 self.viewController = viewController
                 super.init(frame: .zero)
-                self.heightAnchor.constraint(equalToConstant: 60).isActive = true
+                heightAnchor.constraint(equalToConstant: 60).isActive = true
                 setupSettingButton()
                 setupKeyboardDownButton()
         }
@@ -18,7 +18,7 @@ final class ToolBar: UIView {
         
         func update() {
                 if !viewController.currentInputText.isEmpty  {
-                        if !self.subviews.contains(viewController.collectionView) {
+                        if !subviews.contains(viewController.collectionView) {
                                 setupCandidatesCollectionView()
                         }
                         if !isDownArrowSetup {

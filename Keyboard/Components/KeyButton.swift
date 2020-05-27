@@ -55,7 +55,7 @@ final class KeyButton: UIButton {
                 case .text(_):
                         if UIDevice.current.userInterfaceIdiom == .phone {
                                 let shapeWidth: CGFloat = keyButtonView.frame.width
-                                let previewHeight: CGFloat = self.height + 7
+                                let previewHeight: CGFloat = height + 7
                                 
                                 let origin: CGPoint = CGPoint(x: keyButtonView.frame.origin.x, y: keyButtonView.frame.origin.y + 5)
                                 let end: CGPoint = CGPoint(x: keyButtonView.frame.origin.x + shapeWidth, y: keyButtonView.frame.origin.y + 5)
@@ -76,24 +76,24 @@ final class KeyButton: UIButton {
                                 
                                 previewMask = UIView(frame: CGRect(x: origin.x, y: keyButtonView.frame.origin.y, width: shapeWidth, height: 10))
                                 previewMask.backgroundColor = buttonColor
-                                self.addSubview(previewMask)
+                                addSubview(previewMask)
                                 
                                 previewLabel = UILabel(frame: CGRect(x: origin.x, y: keyButtonView.frame.origin.y - previewHeight, width: shapeWidth, height: previewHeight))
                                 previewLabel.textAlignment = .center
                                 previewLabel.adjustsFontForContentSizeCategory = true
                                 previewLabel.font = .preferredFont(forTextStyle: .largeTitle)
                                 previewLabel.textColor = buttonTintColor
-                                self.addSubview(previewLabel)
+                                addSubview(previewLabel)
                                 showPreviewText()
                         } else {
-                                self.keyButtonView.backgroundColor = self.highlightButtonColor
+                                keyButtonView.backgroundColor = self.highlightButtonColor
                         }
                 case .space:
                         spaceTouchPoint = touches.first?.location(in: self) ?? .zero
                         performedDraggingOnSpace = false
-                        self.keyButtonView.backgroundColor = self.highlightButtonColor
+                        keyButtonView.backgroundColor = self.highlightButtonColor
                 case .backspace:
-                        self.keyButtonView.backgroundColor = self.highlightButtonColor
+                        keyButtonView.backgroundColor = self.highlightButtonColor
                 default:
                         break
                 }

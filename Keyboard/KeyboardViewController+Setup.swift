@@ -73,7 +73,7 @@ extension KeyboardViewController {
                 keyboardStackView.addArrangedSubview(settingsView)
         }
         @objc private func handleUpArrowEvent() {
-                self.keyboardLayout = .jyutping
+                keyboardLayout = .jyutping
                 toolBar.update()
                 collectionView.setContentOffset(.zero, animated: false)
         }

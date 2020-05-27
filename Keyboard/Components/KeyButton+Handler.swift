@@ -4,10 +4,10 @@ extension KeyButton {
         
         func setupKeyActions() {
                 if keyboardEvent == .backspace {
-                        self.addTarget(self, action: #selector(handleBackspace), for: .touchDown)
-                        self.addTarget(self, action: #selector(stopBackspace), for: .touchUpInside)
+                        addTarget(self, action: #selector(handleBackspace), for: .touchDown)
+                        addTarget(self, action: #selector(stopBackspace), for: .touchUpInside)
                 } else if keyboardEvent != .space {
-                        self.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+                        addTarget(self, action: #selector(handleTap), for: .touchUpInside)
                 }
         }
         @objc private func handleTap() {
